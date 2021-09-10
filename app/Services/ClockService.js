@@ -2,13 +2,9 @@ import { ProxyState } from "../AppState.js";
 
 
 // @ts-ignore
-const weatherApi = axios.create({
-  baseURL: "https://bcw-sandbox.herokuapp.com/api/weather"
-})
-
-class WeatherService{
+class ClockService{
   constructor(){
-    setInterval(() => {weatherService.getTime()}, 1000)
+    setInterval(() => {clockService.getTime()}, 1000)
   }
 
 async getTime(){
@@ -17,6 +13,9 @@ async getTime(){
   if(today.getMinutes() < 10){
      currentTime = today.getHours() + ':0' + today.getMinutes();
     }
+  // if(today.getHours() < 12){
+  //   today.getHours() - 12
+  // }
   ProxyState.currentTime = currentTime
   console.log('is this the time?', ProxyState.currentTime);
 }
@@ -24,4 +23,4 @@ async getTime(){
 }
 
 
-export const weatherService = new WeatherService()
+export const clockService = new ClockService()

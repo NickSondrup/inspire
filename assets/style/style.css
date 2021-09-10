@@ -1,1 +1,10 @@
 /* BASIC STYLES HERE */
+.background-image{
+  background-size: cover;
+}
+
+.tasks-body{
+  max-height: 15rem;
+  min-height: 15rem;
+  overflow-y: auto;
+}

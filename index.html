@@ -14,7 +14,7 @@
   <title>inspire</title>
 </head>
 
-<body>
+<body id="background-image" class="background-image">
   <header>
     <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
       <a class="navbar-brand ms-3" href="#">
@@ -29,8 +29,35 @@
       <div class="row">
         <div class="col-12">
           <div id="clock">
-            
+
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-3 my-1">
+      <div class="card bg-light border-3 m-3">
+        <div class="card-header d-flex justify-content-between">
+          <h4>Todays Tasks:</h4>
+        </div>
+        <div class="tasks-body">
+          <div class="container">
+            <div id="taskRow" class="row">
+              <ul id="tasks" class="list-group">
+                <!-- tasks go here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <form class="d-flex justify-content-around" onsubmit="app.tasksController.createTask()">
+            <div class="form-group d-flex">
+              <label for="taskName" class="visually-hidden">Task:</label>
+              <input type="text" class="form-control px-3" name="taskDescription" placeholder="Input tasks" required minlength="3" maxlength="50">
+            </div>
+            <div class="button-group">
+              <button type="submit" class="btn text-black fs-4 p-0">Submit</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
