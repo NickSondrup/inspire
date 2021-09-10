@@ -9,6 +9,8 @@ class AppState extends EventEmitter {
   currentTime = ''
 
   currentImg = ''
+
+  currentQuote = ''
 }
 
 export const ProxyState = new Proxy(new AppState(), {

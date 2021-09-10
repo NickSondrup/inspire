@@ -10,9 +10,9 @@ class ImageService{
 
   async getImage(){
     let res = await imageApi.get()
-    console.log('image res', res.data)
+    
     ProxyState.currentImg = res.data.largeImgUrl
-    console.log('image?', ProxyState.currentImg);
+    
   }
 
 }
