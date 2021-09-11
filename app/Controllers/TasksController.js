@@ -11,6 +11,7 @@ export class TasksController{
   constructor(){
     _drawTasks()
     ProxyState.on('tasks', _drawTasks)
+    
   }
 
 createTask(){
@@ -26,6 +27,25 @@ createTask(){
   try{tasksService.createTask(taskData)}
   catch(error){console.log('☢createTask', error)}
   form.reset()
+}
+async toggleCompleted(taskId){
+try {
+  await tasksService.toggleCompleted(taskId)
+} catch (error) {
+  console.log('☢ toggleCompleted', error)
+}
+_drawTasks()
+}
+
+async deleteTask(taskId){
+  let result = window.confirm('Do you want to delete this?')
+  if(result == true){
+    try {
+        tasksService.deleteTask(taskId)
+    } catch (error) {
+       console.log("☣ deleteTask", error)
+    }
+  }
 }
 
 }

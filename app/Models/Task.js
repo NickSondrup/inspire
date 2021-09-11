@@ -9,9 +9,12 @@ export class Task {
 
   get Template() {
     return /*html*/`
-    <li class="list-group-item py-2">
-      <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.tasksController.toggleCompleted('${this.id}')">
-      <span class="ms-2">${this.description}</span>
+    <li class="list-group-item py-2 d-flex justify-content-between">
+      <div>
+        <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.tasksController.toggleCompleted('${this.id}')">
+        <span class="ms-2 ${this.completed ? 'checked' : ''}">${this.description}</span>
+      </div>
+      <i class="mdi mdi-delete mdi-24px text-danger selectable" onclick="app.tasksController.deleteTask('${this.id}')"></i>
     </li>
     `
   }

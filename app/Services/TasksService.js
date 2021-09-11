@@ -15,15 +15,25 @@ class TasksService{
     let res = await tasksApi.post('', newTask)
     console.log(res.data)
     ProxyState.tasks = [...ProxyState.tasks, new Task(res.data)]
-
+    
   }
-
+  
   async getTasks(){
     let res = await tasksApi.get()
     ProxyState.tasks = res.data.map(t => new Task(t))
     console.log(ProxyState.tasks);
   }
 
+  async toggleCompleted(taskId) {
+    const task = ProxyState.tasks.find(t => t.id === taskId)
+    task.completed = !task.completed
+    await tasksApi.put(`${taskId}`, task)
+  }
+  
+  async deleteTask(taskId) {
+    await tasksApi.delete(taskId)
+    ProxyState.tasks = ProxyState.tasks.filter(t => t.id !== taskId)
+  }
 
 }
 

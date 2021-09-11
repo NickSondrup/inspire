@@ -11,6 +11,9 @@ class AppState extends EventEmitter {
   currentImg = ''
 
   currentQuote = ''
+
+  author = ''
+  currentWeather = []
 }
 
 export const ProxyState = new Proxy(new AppState(), {
