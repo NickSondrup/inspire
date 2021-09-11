@@ -8,8 +8,8 @@ height: 100vh;
 }
 
 .tasks-body{
-  max-height: 15rem;
-  min-height: 15rem;
+  height: 10rem;
+
   overflow-y: auto;
 }
 
@@ -18,6 +18,13 @@ height: 100vh;
   color: red;
 }
 
+.clock-row{
+  height: 40vh
+}
+
+.clock-text{
+  font-size: 100px;
+}
 
 
 

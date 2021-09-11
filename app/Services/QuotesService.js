@@ -14,8 +14,6 @@ class QuotesService{
     ProxyState.currentQuote = res.data.content
     ProxyState.author = res.data.author
     console.log('this is the author:', ProxyState.author)
-
-
   } 
 
 

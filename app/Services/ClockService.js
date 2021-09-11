@@ -17,7 +17,6 @@ async getTime(){
   //   today.getHours() - 12
   // }
   ProxyState.currentTime = currentTime
-  console.log('is this the time?', ProxyState.currentTime);
 }
 
 }

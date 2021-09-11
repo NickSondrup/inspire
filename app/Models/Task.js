@@ -9,7 +9,7 @@ export class Task {
 
   get Template() {
     return /*html*/`
-    <li class="list-group-item py-2 d-flex justify-content-between">
+    <li class="list-group-item p-0  d-flex justify-content-between bg-dark text-light">
       <div>
         <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.tasksController.toggleCompleted('${this.id}')">
         <span class="ms-2 ${this.completed ? 'checked' : ''}">${this.description}</span>

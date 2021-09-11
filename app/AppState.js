@@ -2,18 +2,13 @@ import { EventEmitter } from "./Utils/EventEmitter.js"
 import { isValidProp } from "./Utils/isValidProp.js"
 
 class AppState extends EventEmitter {
- 
-
   tasks = []
-
   currentTime = ''
-
   currentImg = ''
-
   currentQuote = ''
-
   author = ''
   currentWeather = []
+  currentTemp= {}
 }
 
 export const ProxyState = new Proxy(new AppState(), {
