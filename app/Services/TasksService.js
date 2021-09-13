@@ -28,11 +28,21 @@ class TasksService{
     const task = ProxyState.tasks.find(t => t.id === taskId)
     task.completed = !task.completed
     await tasksApi.put(`${taskId}`, task)
+    this.tasksCount()
   }
   
   async deleteTask(taskId) {
     await tasksApi.delete(taskId)
     ProxyState.tasks = ProxyState.tasks.filter(t => t.id !== taskId)
+  }
+
+  tasksCount(){
+    let checkedCount = 0
+   let totalCount = ProxyState.tasks.length
+   let checkedTasks = ProxyState.tasks.filter(f => f.completed === true)
+    checkedCount = checkedTasks.length
+    
+   return(checkedCount + '/' + totalCount)
   }
 
 }

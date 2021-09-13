@@ -11,9 +11,14 @@ export class TasksController{
   constructor(){
     _drawTasks()
     ProxyState.on('tasks', _drawTasks)
+    ProxyState.on('tasks', tasksService.tasksCount)
+    ProxyState.on('tasks', this.drawTaskCount)
     
   }
-
+drawTaskCount(){
+  document.getElementById('task-count').innerText = tasksService.tasksCount()
+  }
+  
 createTask(){
   event.preventDefault()
   /**

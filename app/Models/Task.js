@@ -11,7 +11,7 @@ export class Task {
     return /*html*/`
     <li class="list-group-item p-0  d-flex justify-content-between bg-dark text-light">
       <div>
-        <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.tasksController.toggleCompleted('${this.id}')">
+        <input type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.tasksController.toggleCompleted('${this.id}'); app.tasksController.drawTaskCount()">
         <span class="ms-2 ${this.completed ? 'checked' : ''}">${this.description}</span>
       </div>
       <i class="mdi mdi-delete mdi-24px text-danger selectable" onclick="app.tasksController.deleteTask('${this.id}')"></i>
